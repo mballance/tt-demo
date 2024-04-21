@@ -71,14 +71,15 @@
          $valid = $equals_in && (>>1$equals_in == 0);
    
          $out[7:0] = 
-            ($valid == 0) ? >>1$out :
-               ($op[1:0] == 0)
-                  ? $sum :
-                    ($op[1:0] == 1)
-                      ? $diff :
-                        ($op[1:0] == 2)
-                          ? $prod :
-                            $quot;
+            ($reset) ? 0 :
+               ($valid == 0) ? >>1$out :
+                  ($op[1:0] == 0)
+                     ? $sum :
+                       ($op[1:0] == 1)
+                         ? $diff :
+                           ($op[1:0] == 2)
+                             ? $prod :
+                               $quot;
          
    // Note that pipesignals assigned here can be found under /fpga_pins/fpga.
    
