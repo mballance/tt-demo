@@ -55,9 +55,9 @@
       @0
          $reset = *reset;
          $val1[7:0] = {5'b0, 3'd2};
-         $op[1:0] = *uio_in[5:4];
+         $op[1:0] = *ui_in[5:4];
          $val2[7:0] = {4'b0, *ui_in[3:0]};
-         $equals_in = *uio_in[7];
+         $equals_in = *ui_in[7];
 
       @1
 
